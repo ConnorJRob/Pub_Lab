@@ -3,5 +3,5 @@ class Customer:
         self.name = name
         self.wallet = wallet
 
-    # def make_payment(self, drink):
-    #     self.wallet -= drink.price
+    def make_payment(self, drink):
+        self.wallet -= drink.price
