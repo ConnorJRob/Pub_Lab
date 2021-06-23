@@ -13,7 +13,7 @@ class Pub:
         self.drinks.append(drink)
 
     def find_drink_by_name(self,drink_name):
-        # pdb.set_trace()
+        pdb.set_trace()
         for drink in self.drinks:
             if drink.name == drink_name:
                 return drink

@@ -27,6 +27,16 @@ class TestPub(unittest.TestCase):
         self.pub.take_payment(self.drink)
         self.assertEqual(104.50, self.pub.till)
 
+    def test_find_drink_by_name(self):
+        self.drink1 = Drink("Pina Colada", 4.50)
+        self.drink2 = Drink("Mai Thai", 5.00)
+        self.drink3 = Drink("Sex on the Beach", 3.50)
+        self.pub.add_drink_to_menu(self.drink1)
+        self.pub.add_drink_to_menu(self.drink2)
+        self.pub.add_drink_to_menu(self.drink3)
+        searched_drink = self.pub.find_drink_by_name("Sex on the Beach")
+        self.assertEqual("Sex on the Beach", searched_drink.name)
+    
     # def test_can_find_drink_by_name(self):
     #     self.drink1 = Drink("Pina Colada", 4.50)
     #     self.drink2 = Drink("Mai Thai", 5.00)
