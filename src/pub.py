@@ -1,21 +1,13 @@
+import pdb
+
 class Pub:
-    def __init__(self, name, till, drinks):
+    def __init__(self, name, till):
         self.name = name
         self.till = till
-        self.drinks = drinks
+        self.drinks = []
 
-    def take_payment(self,amount):
-        self.till += amount
+    def take_payment(self,drink):
+        self.till += drink.price
 
-class Drinks:
-    def __init__(self, name, price):
-        self.name = name
-        self.price = price
-
-class Customer:
-    def __init__(self, name, wallet):
-        self.name = name
-        self.wallet = wallet
-
-    def make_payment(self, amount):
-        self.wallet -= amount
+    def add_drink_to_menu(self,drink):
+        self.drinks.append(drink)
