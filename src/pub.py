@@ -13,7 +13,13 @@ class Pub:
         self.drinks.append(drink)
 
     def find_drink_by_name(self,drink_name):
-        pdb.set_trace()
+        # pdb.set_trace()
         for drink in self.drinks:
             if drink.name == drink_name:
                 return drink
+
+    def serve_customer(self,customer,drink):
+        drink_ordered = self.find_drink_by_name(drink)
+        customer.make_payment(drink_ordered)
+        self.take_payment(drink_ordered)
+
